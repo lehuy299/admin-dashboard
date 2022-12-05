@@ -5,15 +5,16 @@ import Table from './components/organisms/Table';
 import customer_list from './assets/JsonData/customers-list.json'
 import TableData from './components/atoms/TableData';
 import TableHead from './components/atoms/TableHead';
+import TopNav from './components/organisms/TopNav';
+import PageTitle from './components/atoms/PageTitle';
 
 function App() {
-  console.log(customer_list);
   const renderHead = (item, index) => (
     <TableHead index={index}>{item.split('_').join(' ')}</TableHead>
   );
 
   const renderBody = (item, index) => (
-    <tr key={index}>
+    <tr className='hover:bg-blue-400 hover:text-white' key={index}>
       <TableData>{item.id}</TableData>
       <TableData>{item.name}</TableData>
       <TableData>{item.email}</TableData>
@@ -27,8 +28,9 @@ function App() {
   return (
     <div className="flex">
       <Sidebar />
-      <div className='bg-slate-50 w-full pl-10 ml-72'>
-        <h2>Customers</h2>
+      <div className='bg-slate-50 w-full h-screen px-10 ml-72'>
+        <TopNav/>
+        <PageTitle>Customers</PageTitle>
         <Table 
           limit={10}
           list_data={customer_list}

@@ -5,7 +5,7 @@ import MenuItem from '../molecules/MenuItem';
 
 const Sidebar = () => {
   return (
-    <div className='w-72 h-screen shadow-lg'>
+    <div className='w-72 h-screen shadow-lg fixed'>
         <ul className='pt-16 flex flex-col items-center'>
             <li className='w-4/5'>
               <MenuItem icon={<MdDashboard size={24} />}>Dashboard</MenuItem>
