@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="flex">
       <Sidebar />
-      <div className='bg-slate-50 w-full h-screen px-10 ml-72'>
+      <div className='bg-slate-50 w-full h-screen px-10 ml-72 dark:bg-black'>
         <TopNav/>
         <PageTitle>Customers</PageTitle>
         <Table 
