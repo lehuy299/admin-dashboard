@@ -5,9 +5,10 @@ import ItemText from '../atoms/ItemText';
 import UserNav from '../molecules/UserNav';
 import { BsBell, BsSun, BsPerson, BsWallet, BsGear, BsBoxArrowRight } from 'react-icons/bs'
 import DropdownItem from '../molecules/DropdownItem';
+import withDarkMode from '../withDarkMode';
 
-const TopNav = () => {
-
+const TopNav = (props) => {
+  console.log('props',props);
   const renderUserDropdown = () => (
     <div className='bg-white rounded-xl shadow-md w-40'>
       <DropdownItem icon={<BsPerson size={24} />}>
@@ -37,11 +38,11 @@ const TopNav = () => {
             renderToggle={() => <BsBell size={28} />}
           />
           <Dropdown 
-            renderToggle={() => <BsSun size={28} />}
+            renderToggle={() => <div onClick={() => props.setDarkMode(!props.dark_mode)}><BsSun size={28}/></div>}
           />
         </div>
     </div>
   )
 }
 
-export default TopNav
+export default withDarkMode(TopNav)
